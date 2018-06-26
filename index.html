@@ -17,22 +17,41 @@
         <input id="task" type="text" name="task" placeholder="New Task"><br>
         <button class="btn" type="submit" id="task-add">Add Task</button>
     </div>
+
+
     <div class="task-list">
         <h1>To Do List</h1>
         <label for="filter">Filter Tasks</label><br>
         <input id="filter" type="text" name="filter" placeholder="Filter Tasks"><br>
+   
         
         <div class="container">
             <ul class="collection">
                 <!-- place for new task that shoud look like below -->
                 <li class="collection-item"> 
                     Trening
+                    
                     <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
+                    <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                    
+                </li>
+                <li class="collection-item"> 
+                    Buy new car
+                    <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
+                    <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                    
+                </li>
+                <li class="collection-tem"> 
+                    Clean your room
+                    <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
+                    <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                    
                 </li>
             </ul>
         </div>
             <a href="#" class="btn" id="clear">Clear Tasks</a>
     </div>
+    
     <script src="./js/app.js"></script>
 </body>
 </html>
