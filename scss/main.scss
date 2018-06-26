@@ -84,7 +84,7 @@ input:focus {
 
 .collection {
     margin: 10px auto;
-    border: 1px solid #e0e0e0;
+    border: .5px solid #e0e0e0;
     border-radius: 2px;
     overflow: hidden;
     position: relative;
@@ -94,19 +94,21 @@ input:focus {
 .collection,
 .collection-item {
     margin: 10px auto;
+    border-bottom: .5px solid #e0e0e0;
     max-width: 600px;
     padding: 0 1px;
     text-align: left;
     list-style: none;
-    padding: 10px;
+    padding-left: 10px;
 }
 
 /*------------------------------*/
 /*---- taks deleting link ----*/
 /*------------------------------*/
-
+.task-complete,
 .task-delete {
-    font-size: 15px;
+    margin-right: 15px;
+    font-size: 17px;
     color: #3f3f3f;
     float: right;
 }
