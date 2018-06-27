@@ -13,25 +13,31 @@
 <body>
     <div class="container">
             <div class="task-form">
+                <div class="task-form-border">
                 <h1>To Do</h1>
-                <label for="task">New Task</label> <br>
+                <label for="task">New Task</label>
                 <ul class="task-features">
                     <li class = "task-features-row">
+                        <label>Title</label>
                         <input id="task" type="text" name="task" placeholder="New Task">
                         <div class="task-rating">
+                            <label>How important?</label>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                         </div>
+                        <label>Till when?</label>
                         <input id="date" type="date" name="date" placeholder="Deadline">
                     </li>
                     <li>
-                        <input id="remarks" type="text" name="remarks" placeholder="Maybe some remarks?">
+                        <label>Remarks?</label>
+                        <input id="remarks" type="text" name="remarks" placeholder="Something more?">
                     </li>
                 </ul>
                 <button class="btn" type="submit" id="task-add">Add Task</button>
+                </div>
             </div>
 
 
@@ -54,18 +60,23 @@
                 <div class="container">
                     <ul class="collection">
                         <!-- place for new task that shoud look like below -->
-                        <li class="collection-item">
-                            Trening
+                        <li class="collection-item">    <span class="title">Training</span><br>
+                            <span class="till">11.05.2018</span><br>
+                            <span class="remark">going to dance class</span>
                             <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
                             <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
                         </li>
                         <li class="collection-item">
-                            Buy new car
+                                <span class="title">Shoping</span><br>
+                                <span class="till">18.07.2018</span><br>
+                                <span class="remark">get new car</span>
                             <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
                             <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
                         </li>
-                        <li class="collection-tem">
-                            Clean your room
+                        <li class="collection-item">
+                                <span class="title">clearing-up</span><br>
+                                <span class="till">08.04.2018</span><br>
+                                <span class="remark">my room!</span>
                             <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
                             <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
                         </li>
