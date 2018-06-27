@@ -7,51 +7,74 @@
     <title>To Do List</title>
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <div class="container">
-    <div class="task-form">
-        <h1>To Do</h1>
-        <label for="task">New Task</label> <br>     
-        <input id="task" type="text" name="task" placeholder="New Task"><br>
-        <button class="btn" type="submit" id="task-add">Add Task</button>
-    </div>
+            <div class="task-form">
+                <h1>To Do</h1>
+                <label for="task">New Task</label> <br>
+                <ul class="task-features">
+                    <li class = "task-features-row">
+                        <input id="task" type="text" name="task" placeholder="New Task">
+                        <div class="task-rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <input id="date" type="date" name="date" placeholder="Deadline">
+                    </li>
+                    <li>
+                        <input id="remarks" type="text" name="remarks" placeholder="Maybe some remarks?">
+                    </li>
+                </ul>
+                <button class="btn" type="submit" id="task-add">Add Task</button>
+            </div>
 
 
-    <div class="task-list">
-        <h1>To Do List</h1>
-        <label for="filter">Filter Tasks</label><br>
-        <input id="filter" type="text" name="filter" placeholder="Filter Tasks"><br>
-   
-        
-        <div class="container">
-            <ul class="collection">
-                <!-- place for new task that shoud look like below -->
-                <li class="collection-item"> 
-                    Trening
-                    
-                    <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
-                    <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
-                    
-                </li>
-                <li class="collection-item"> 
-                    Buy new car
-                    <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
-                    <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
-                    
-                </li>
-                <li class="collection-tem"> 
-                    Clean your room
-                    <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
-                    <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
-                    
-                </li>
-            </ul>
-        </div>
-            <a href="#" class="btn" id="clear">Clear Tasks</a>
+            <div class="task-list">
+                <h1>To Do List</h1>
+                <label for="filter">Filter Tasks</label><br>
+                <div class="filter-box">
+                    <input id="filter" type="text" name="filter" placeholder="Filter Tasks">
+                    <a class="filter-icon" href=""><span class="fas fa-filter"></span></a>
+                        <ul class="filter-list">
+                            <li>Filter by:</li>
+                            <li><input type="checkbox" name="rating">Rating</li>
+                            <li><input type="checkbox" name="done">Tasks DONE</li>
+                            <li><input type="checkbox" name="to-do">Tasks TO DO</li>
+                        </ul>
+                </div>
+                <br>
+
+
+                <div class="container">
+                    <ul class="collection">
+                        <!-- place for new task that shoud look like below -->
+                        <li class="collection-item">
+                            Trening
+                            <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
+                            <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                        </li>
+                        <li class="collection-item">
+                            Buy new car
+                            <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
+                            <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                        </li>
+                        <li class="collection-tem">
+                            Clean your room
+                            <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
+                            <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                    <a href="#" class="btn" id="clear">Clear Tasks</a>
+
+            </div>
     </div>
-    
     <script src="./js/app.js"></script>
 </body>
 </html>
