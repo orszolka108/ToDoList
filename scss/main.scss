@@ -43,10 +43,8 @@ html {
 .task-features {
     list-style: none;
     margin: 10px 0;
-    
-    li:first-child {
-        border-bottom: none;
-    }
+    display: none;
+
     li {
         display: block;
         padding: 10px;
@@ -54,9 +52,11 @@ html {
     }
 }
 
+.task-features-display{
+    display: inline;
+}
 
-
-#task, #remarks, #date, #filter {
+#task, #description, #date, #filter, #priority{
     letter-spacing: 2px;
     background-color: transparent;
     border: none;
@@ -77,20 +77,6 @@ label {
     color: #4eaaad;
 }
 
-.task-rating {
-    padding: 5px;
-    border-radius: 4px;
-    span {
-        font-size: 16px;
-        font-weight: 400;
-        color: #c7c94a;
-    }
-    &:after {
-        display: block;
-        content: '';
-        border: 0.5px solid gray;
-    }
-}
 
 .till {
     border: 1px solid gray;
@@ -108,6 +94,8 @@ label {
     margin: 0 auto;
    
 }
+
+
 
 .btn {
     text-decoration: none;
@@ -188,6 +176,10 @@ label {
     padding-left: 10px;
 }
 
+.completed {
+    background: grey;
+}
+
 /*------------------------------*/
 /*---- taks deleting link ----*/
 /*------------------------------*/
@@ -197,4 +189,5 @@ label {
     font-size: 17px;
     color: #3f3f3f;
     float: right;
+
 }
