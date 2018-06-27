@@ -15,24 +15,26 @@
             <div class="task-form">
                 <div class="task-form-border">
                 <h1>To Do</h1>
-                <label for="task">New Task</label>
+                    <button class="btn" type="submit" id="task-new">New Task</button></br></br>
                 <ul class="task-features">
                     <li class = "task-features-row">
-                        <label>Title</label>
-                        <input id="task" type="text" name="task" placeholder="New Task">
+                        <!--<label>Title</label>-->
+                        <input id="task" type="text" name="task" placeholder="Task title"></br>
+                        <!--<label>How important?</label>-->
+                        <input id="priority" type="number" name="priority" min="1" max="5" placeholder="Priorytet"></br>
                         <div class="task-rating">
-                            <label>How important?</label>
-                            <input id="priority" type="number" name="priority" min="1" max="5" placeholder="Priorytet">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
-                        <label>Till when?</label>
-                        <input id="date" type="date" name="date" placeholder="Deadline">
-                    </li>
-                    <li>
-                        <label>Remarks?</label>
-                        <input id="remarks" type="text" name="remarks" placeholder="Something more?">
-                    </li>
+                        <!--<label>Till when?</label>-->
+                        <input id="date" type="date" name="date" placeholder="Deadline"></br>
+                        <!--<label>Remarks?</label>-->
+                        <input id="description" type="text" name="description" placeholder="Something more?"></br>
+                        <button class="btn" type="submit" id="task-add">Add Task</button>
                 </ul>
-                <button class="btn" type="submit" id="task-add">Add Task</button>
                 </div>
             </div>
 
@@ -54,27 +56,34 @@
 
 
                 <div class="container">
-                    <ul class="collection">
+                    <ul class="collection" id="task-list">
                         <!-- place for new task that shoud look like below -->
-                        <li class="collection-item">    <span class="title">Training</span><br>
-                            <span class="till">11.05.2018</span><br>
-                            <span class="remark">going to dance class</span>
+                        <li class="collection-item">
+                            <h3 class="title">Training</h3>
                             <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
                             <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                            <div class="priority">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <span class="till">11.05.2018</span>
+                            <p class="remark">going to dance class</p>
                         </li>
                         <li class="collection-item">
-                                <span class="title">Shoping</span><br>
-                                <span class="till">18.07.2018</span><br>
-                                <span class="remark">get new car</span>
+                            <h3 class="title">Shoping</h3>
                             <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
                             <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
-                        </li>
-                        <li class="collection-item">
-                                <span class="title">clearing-up</span><br>
-                                <span class="till">08.04.2018</span><br>
-                                <span class="remark">my room!</span>
-                            <a class="task-delete" href="http://"><i class="far fa-times-circle"></i></a>
-                            <a class="task-complete" href="http://"><i class="far fa-check-circle"></i></a>
+                            <div class="priority">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <span class="till">18.07.2018</span><br>
+                            <p class="remark">get new car</p>
+
                         </li>
                     </ul>
                 </div>
