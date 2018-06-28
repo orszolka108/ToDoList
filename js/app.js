@@ -35,7 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var priority = document.getElementById("priority");
     var description = document.getElementById("description");
 
+
     addTask.addEventListener("click", function(event){
+
+        //walidacja
+
+        if (validation(task.value) === false) {
+            alert("Your task name has incorrect length. Please try again! ");
+        }
 
         //Nowe elementy (dzieci i buttony)
         var newLi           = document.createElement("li");
@@ -116,4 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //warunek walidacji
+    function validation(value) {
+        if (value.length > 5 && value.length < 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 });
