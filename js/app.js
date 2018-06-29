@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Wyświetlanie i ukrywanie formularza
     var newTask = document.getElementById("task-new");
-    var taskForm = document.querySelector(".task-features")
+    var taskForm = document.querySelector(".task-features");
+    var filter = document.getElementById("filter");
 
     newTask.addEventListener("click", function(event){
         taskForm.classList.toggle("task-features-display");
@@ -45,8 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         return tasks;  
     }
-
-
+    
     addTask.addEventListener("click", function(event){
 
         //walidacja
@@ -435,6 +435,23 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
+
+    //Filtrowanie tasków po tekscie
+
+    filter.addEventListener("keyup", filterTasks);
+
+    function filterTasks(e) {
+        const text = e.target.value.toLowerCase();
+      
+        document.querySelectorAll('.collection-item').forEach(function(task){
+          const item = task.firstChild.textContent;
+          if(item.toLowerCase().indexOf(text) != -1){
+            task.style.display = 'block';
+          } else {
+            task.style.display = 'none';
+          }
+        });
+      }
 
     //warunek walidacji
     function validation(value) {
