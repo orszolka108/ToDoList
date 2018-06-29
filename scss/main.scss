@@ -127,7 +127,7 @@ label {
 .filter-button {
     text-decoration: none;
 }
-#filter {
+.filter {
     width: 25%;
 }
 
@@ -148,7 +148,7 @@ label {
     flex-direction: column;
     justify-content: center;
 }
-/*hover zrobiony podglądowo, myślę, że lepiej dodać event w JS na clicka :)*/
+
 .filter-list-active {
     opacity: 1;
     visibility: visible;
