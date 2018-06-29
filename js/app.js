@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var filterButton = document.querySelector(".filter-button");
     var filterList = document.querySelector(".filter-list");
 
-    filterButton.addEventListener("mouseover", function(event) {
+    filterButton.addEventListener("click", function(event) {
         filterList.classList.toggle("filter-list-active");
 
     })
