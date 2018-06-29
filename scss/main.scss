@@ -154,6 +154,21 @@ label {
     visibility: visible;
 }
 
+.filter-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.filterbutton {
+    background-color: #8fcec4;
+    border: none;
+    outline-color: #adfaee;
+    border: 1px solid #98dcd1;
+    padding: 5px;
+}
+
 /*------------------------------*/
 /*---- list for new task ----*/
 /*------------------------------*/
