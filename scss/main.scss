@@ -127,6 +127,9 @@ label {
 .filter-button {
     text-decoration: none;
 }
+#filter {
+    width: 25%;
+}
 
 .filter-list {
     list-style: none;
@@ -135,12 +138,15 @@ label {
     border-radius: 5px;
     background-color: #8fcec4;
     padding: 5px;
-    top: 50px;
-    right: 105px;
+    top: -50px;
+    right: 100px;
     opacity:0;
     visibility: hidden;
     z-index: 1;
     transition: 0.5s opacity;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 /*hover zrobiony podglądowo, myślę, że lepiej dodać event w JS na clicka :)*/
 .filter-list-active {
