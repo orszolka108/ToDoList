@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (validation(task.value) === false) {
             alert("Your task name has incorrect length. Please try again! ");
+            e.stopImmediatePropagation();
         }
 
         //Nowe elementy (dzieci i buttony)
