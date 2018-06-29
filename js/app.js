@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Wyświetlanie i ukrywanie formularza
     var newTask = document.getElementById("task-new");
-    var taskForm = document.querySelector(".task-features")
+    var taskForm = document.querySelector(".task-features");
+    var filter = document.getElementById("filter");
 
     newTask.addEventListener("click", function(event){
         taskForm.classList.toggle("task-features-display");
@@ -174,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newBtnDelete.innerHTML      = '<i class="far fa-times-circle"></i>';
             newBtnComplete.innerHTML    = '<i class="far fa-check-circle"></i>';
 
+
             //Klasy poszczególnych elementów
             newLi.classList.add("collection-item");
             if(key.isCompleted === true){
@@ -275,7 +277,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-
     var rateOneButton = document.querySelector("#rate-one");
     var rateTwoButton = document.querySelector("#rate-two");
     var rateThreeButton = document.querySelector("#rate-three");
@@ -285,20 +286,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var doneFilter = document.querySelector("#done-filter");
     var toDoFilter = document.querySelector("#todo-filter");
-    var resetFilter = document.querySelector("#reset-filter")
+    var resetFilter = document.querySelector("#reset-filter");
 
 
 
     rateOneButton.addEventListener("click", function(event) {
 
-            var rateTwo = document.querySelectorAll(".prio-2");
-            var rateThree = document.querySelectorAll(".prio-3");
-            var rateFour = document.querySelectorAll(".prio-4");
-            var rateFive = document.querySelectorAll(".prio-5");
+        var rateTwo = document.querySelectorAll(".prio-2");
+        var rateThree = document.querySelectorAll(".prio-3");
+        var rateFour = document.querySelectorAll(".prio-4");
+        var rateFive = document.querySelectorAll(".prio-5");
+
         console.log(rateTwo);
 
         rateTwo.forEach(function (el) {
-           el.classList.add("hidden");
+            el.classList.add("hidden");
         });
         rateThree.forEach(function (el) {
             el.classList.add("hidden");
@@ -433,6 +435,23 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
+
+    //Filtrowanie tasków po tekscie
+
+    filter.addEventListener("keyup", filterTasks);
+
+    function filterTasks(e) {
+        const text = e.target.value.toLowerCase();
+      
+        document.querySelectorAll('.collection-item').forEach(function(task){
+          const item = task.firstChild.textContent;
+          if(item.toLowerCase().indexOf(text) != -1){
+            task.style.display = 'block';
+          } else {
+            task.style.display = 'none';
+          }
+        });
+      }
 
     //warunek walidacji
     function validation(value) {
