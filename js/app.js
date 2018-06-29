@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newBtnDelete.innerHTML      = '<i class="far fa-times-circle"></i>';
             newBtnComplete.innerHTML    = '<i class="far fa-check-circle"></i>';
 
+
             //Klasy poszczególnych elementów
             newLi.classList.add("collection-item");
             if(key.isCompleted === true){
@@ -276,7 +277,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-
     var rateOneButton = document.querySelector("#rate-one");
     var rateTwoButton = document.querySelector("#rate-two");
     var rateThreeButton = document.querySelector("#rate-three");
@@ -286,20 +286,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var doneFilter = document.querySelector("#done-filter");
     var toDoFilter = document.querySelector("#todo-filter");
-    var resetFilter = document.querySelector("#reset-filter")
+    var resetFilter = document.querySelector("#reset-filter");
 
 
 
     rateOneButton.addEventListener("click", function(event) {
 
-            var rateTwo = document.querySelectorAll(".prio-2");
-            var rateThree = document.querySelectorAll(".prio-3");
-            var rateFour = document.querySelectorAll(".prio-4");
-            var rateFive = document.querySelectorAll(".prio-5");
+        var rateTwo = document.querySelectorAll(".prio-2");
+        var rateThree = document.querySelectorAll(".prio-3");
+        var rateFour = document.querySelectorAll(".prio-4");
+        var rateFive = document.querySelectorAll(".prio-5");
+
         console.log(rateTwo);
 
         rateTwo.forEach(function (el) {
-           el.classList.add("hidden");
+            el.classList.add("hidden");
         });
         rateThree.forEach(function (el) {
             el.classList.add("hidden");
