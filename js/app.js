@@ -41,12 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
         var tasks;
         if(localStorage.getItem('tasks') === null){
             tasks = [];
-          } else {
+        } else {
             tasks = JSON.parse(localStorage.getItem('tasks'));
-          }
-        return tasks;  
+        }
+        return tasks;
     }
-    
+
     addTask.addEventListener("click", function(event){
 
         //walidacja
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var newDescription  = document.createElement("p");
         var newBtnDelete    = document.createElement("a");
         var newBtnComplete  = document.createElement("a");
+        //klasa, która powinna
         var priorityClass = "prio-" + priority.value;
 
 
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Zapisywanie  wartosic inputow w local storage
         var storageInfo = {title: task.value, date: date.value, priority: priority.value, description: description.value, isCompleted: false};
         storeTaskInLocalStorage(storageInfo);
-        
+
         //event do buttona delete
         newBtnDelete.addEventListener("click",  removeTask);
 
@@ -140,14 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var tasks = checkLocalStorage();
 
         tasks.push(task);
-      
+
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
     // funkcja wczytująca informacji z local storage
     function getTasks() {
         var tasks = checkLocalStorage();
-        
+
         //robimy loopa przez klucze w tablicy tasks
         tasks.forEach(function(key){
             //Nowe elementy (dzieci i buttony)
@@ -168,6 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 newPriority.appendChild(newStar);
             }
 
+            // Ustawianie klasy priorytetu
+            var priorityClass = "prio-" + key.priority;
+            newLi.classList.add(priorityClass);
             //Wewnętrzne do poszczególnych elentów
             newTask.innerText           = key.title; //od klucza tasks
             newDate.innerText           = key.date;
@@ -198,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             taskList.appendChild(newLi);
 
-                //event do buttona delete
+            //event do buttona delete
             newBtnDelete.addEventListener("click", removeTask);
 
             //event do buttona completed
@@ -216,24 +220,25 @@ document.addEventListener("DOMContentLoaded", function () {
     function removeTask(e) {
         if(e.target.parentElement.classList.contains('task-delete')) {
             e.target.parentElement.parentElement.remove();
-            // usuwanie z local storage 
-            removeTaskFromLocalStorage(e.target.parentElement.parentElement); 
+
+            // usuwanie z local storage
+            removeTaskFromLocalStorage(e.target.parentElement.parentElement);
         }
     }
 
     // funkcja usuwajaca elementy pojedynczo z local storage
     function removeTaskFromLocalStorage(removedTask) {
         var tasks = checkLocalStorage();
-      
+
         tasks.forEach(function(task, index){
-          if( task.title === removedTask.children[0].innerHTML && task.description === removedTask.children[5].innerHTML) {
-            tasks.splice(index, 1);
-          }
+            if( task.title === removedTask.children[0].innerHTML && task.description === removedTask.children[5].innerHTML) {
+                tasks.splice(index, 1);
+            }
         });
-        
+
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
-   
+
     // funkcja sprawdzajaca czy task jest complited
     function changeCompletedInLocalStorage(completedTask){
         var tasks = checkLocalStorage();
@@ -244,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     task.isCompleted = false;
                 }else{
                     task.isCompleted = true;
-                } 
+                }
             }
         })
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -440,16 +445,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function filterTasks(e) {
         const text = e.target.value.toLowerCase();
-      
+
         document.querySelectorAll('.collection-item').forEach(function(task){
-          const item = task.firstChild.textContent;
-          if(item.toLowerCase().indexOf(text) != -1){
-            task.style.display = 'block';
-          } else {
-            task.style.display = 'none';
-          }
+            const item = task.firstChild.textContent;
+            if(item.toLowerCase().indexOf(text) != -1){
+                task.style.display = 'block';
+            } else {
+                task.style.display = 'none';
+            }
         });
-      }
+    }
 
     //warunek walidacji
     function validation(value) {
