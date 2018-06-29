@@ -37,8 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var description = document.getElementById("description");
 
 
-
     addTask.addEventListener("click", function(event){
+
+        //walidacja
+
+        if (validation(task.value) === false) {
+            alert("Your task name has incorrect length. Please try again! ");
+            e.stopImmediatePropagation();
+        }
 
         //Nowe elementy (dzieci i buttony)
         var newLi           = document.createElement("li");
@@ -126,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+<<<<<<< HEAD
     //Filtrowanie
 
     //wyswietlanie listy filtrowania
@@ -136,23 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         filterList.classList.toggle("filter-list-active");
 
     })
-    //
-    // filterButton.addEventListener("mouseout", function(event) {
-    //     rateTwo.forEach(function (el) {
-    //         el.classList.add("hidden");
-    //     });
-    //     rateThree.forEach(function (el) {
-    //         el.classList.add("hidden");
-    //     });
-    //     rateFour.forEach(function (el) {
-    //         el.classList.add("hidden");
-    //     });
-    //     rateFive.forEach(function (el) {
-    //         el.classList.add("hidden");
-    //     });
-    //     filterList.classList.toggle("filter-list-active");
-    //
-    // })
+
 
     var rateOneButton = document.querySelector("#rate-one");
     var rateTwoButton = document.querySelector("#rate-two");
@@ -284,9 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     })
-    // rateOneButton.addEventListener("click", function(event) {
-    //     var dataRate = document.
-    // })
 
 
     toDoFilter.addEventListener("click", function(event) {
@@ -315,46 +303,12 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 
-
-    // toDoFilter.addEventListener("click", function(event) {
-    //     // var doneTasks = document.querySelectorAll(".completed");
-    //     var doneTasks = document.querySelectorAll(".completed");
-    //     var filterAllTasks = document.querySelectorAll(".collection-item");
-    //         for (var i = 0; i < filterAllTasks.length; i++) {
-    //             if (filterAllTasks[i].className === "completed") {
-    //
-    //             } else {
-    //                 doneTasks[i].classList.add ("hidden");
-    //             }
-    //         }
-    //
-    // });
-    //
-    // doneFilter.addEventListener("click", function(event) {
-    //     var doneTasks = document.querySelectorAll(".completed");
-    //     var allTasks = document.querySelectorAll(".collection-item");
-    //
-    //     console.log(doneTasks);
-    //     // allTasks.forEach(function (el) {
-    //     //     if (el.className === "completed") {
-    //     //         console.log("task-done" + el);
-    //     //     } else {
-    //     //         el.classList.add("hidden");
-    //     //         console.log("task-gowno" + el);
-    //     //     }
-    //     // });
-    //
-    //     for (var i = 0; i < allTasks.length; i++) {
-    //         for (var j = 0; j < doneTasks.length; j++) {
-    //             if (allTasks[i] === doneTasks[j]) {
-    //
-    //             } else {
-    //                 allTasks[i].classList.add("hidden");
-    //             }
-    //         }
-    //     }
-    // });
-
-
-
+    //warunek walidacji
+    function validation(value) {
+        if (value.length > 5 && value.length < 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 });
