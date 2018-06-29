@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var stars = document.querySelectorAll(".fa-star");
     var starCount;
 
+
     priority.addEventListener("change", function(){
         var starNumber = priority.value;
         if (starNumber < starCount){
@@ -44,8 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         return tasks;  
     }
-    
+
+
     addTask.addEventListener("click", function(event){
+
+        //walidacja
+
+        if (validation(task.value) === false) {
+            alert("Your task name has incorrect length. Please try again! ");
+            e.stopImmediatePropagation();
+        }
 
         //Nowe elementy (dzieci i buttony)
         var newLi           = document.createElement("li");
@@ -55,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var newDescription  = document.createElement("p");
         var newBtnDelete    = document.createElement("a");
         var newBtnComplete  = document.createElement("a");
+        var priorityClass = "prio-" + priority.value;
+
 
         //Tworzenie giwazdek
         for (var i = 0; i < priority.value; i++){
@@ -82,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
         newDescription.classList.add("remark");
         newBtnDelete.classList.add("task-delete");
         newBtnComplete.classList.add("task-complete");
+        newLi.classList.add(priorityClass);
+        newLi.classList.add("not-completed");
 
 
         //dodanie elementów do głównego li
@@ -104,7 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
         //event do buttona completed
         newBtnComplete.addEventListener("click", function () {
             newLi.classList.toggle("completed");
+            newLi.classList.toggle("not-completed");
             changeCompletedInLocalStorage(this.parentElement);
+
         });
 
         //ukrywanie formularza po kliknięciu
@@ -115,6 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
         date.value = "";
         priority.value = "";
         description.value = "";
+
+
     });
 
 
@@ -248,4 +265,182 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //Filtrowanie
+
+    //wyswietlanie listy filtrowania
+    var filterButton = document.querySelector(".filter-button");
+    var filterList = document.querySelector(".filter-list");
+
+    filterButton.addEventListener("mouseover", function(event) {
+        filterList.classList.toggle("filter-list-active");
+
+    })
+
+
+    var rateOneButton = document.querySelector("#rate-one");
+    var rateTwoButton = document.querySelector("#rate-two");
+    var rateThreeButton = document.querySelector("#rate-three");
+    var rateFourButton = document.querySelector("#rate-four");
+    var rateFiveButton = document.querySelector("#rate-five");
+
+
+    var doneFilter = document.querySelector("#done-filter");
+    var toDoFilter = document.querySelector("#todo-filter");
+    var resetFilter = document.querySelector("#reset-filter")
+
+
+
+    rateOneButton.addEventListener("click", function(event) {
+
+            var rateTwo = document.querySelectorAll(".prio-2");
+            var rateThree = document.querySelectorAll(".prio-3");
+            var rateFour = document.querySelectorAll(".prio-4");
+            var rateFive = document.querySelectorAll(".prio-5");
+        console.log(rateTwo);
+
+        rateTwo.forEach(function (el) {
+           el.classList.add("hidden");
+        });
+        rateThree.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFour.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFive.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+
+    })
+
+
+    rateTwoButton.addEventListener("click", function(event) {
+
+        var rateOne = document.querySelectorAll(".prio-1");
+        var rateThree = document.querySelectorAll(".prio-3");
+        var rateFour = document.querySelectorAll(".prio-4");
+        var rateFive = document.querySelectorAll(".prio-5");
+
+        rateOne.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateThree.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFour.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFive.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+
+    })
+
+
+    rateThreeButton.addEventListener("click", function(event) {
+
+        var rateOne = document.querySelectorAll(".prio-1");
+        var rateTwo = document.querySelectorAll(".prio-2");
+        var rateFour = document.querySelectorAll(".prio-4");
+        var rateFive = document.querySelectorAll(".prio-5");
+
+        rateTwo.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateOne.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFour.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFive.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+
+    })
+
+
+    rateFourButton.addEventListener("click", function(event) {
+
+        var rateOne = document.querySelectorAll(".prio-1");
+        var rateTwo = document.querySelectorAll(".prio-2");
+        var rateThree = document.querySelectorAll(".prio-3");
+
+        var rateFive = document.querySelectorAll(".prio-5");
+        console.log(rateTwo);
+
+        rateTwo.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateThree.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateOne.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFive.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+
+    })
+
+    rateFiveButton.addEventListener("click", function(event) {
+
+        var rateOne = document.querySelectorAll(".prio-1");
+        var rateTwo = document.querySelectorAll(".prio-2");
+        var rateThree = document.querySelectorAll(".prio-3");
+
+        var rateFour = document.querySelectorAll(".prio-4");
+        console.log(rateTwo);
+
+        rateTwo.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateThree.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateOne.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+        rateFour.forEach(function (el) {
+            el.classList.add("hidden");
+        });
+
+    })
+
+
+    toDoFilter.addEventListener("click", function(event) {
+        var doneTasks = document.querySelectorAll(".completed");
+
+
+        doneTasks.forEach(function (el) {
+            el.classList.add ("hidden");
+        });
+    });
+
+    doneFilter.addEventListener("click", function(event) {
+        var toDoTasks = document.querySelectorAll(".not-completed")
+
+        toDoTasks.forEach(function (el) {
+            el.classList.add ("hidden");
+        });
+    });
+
+    resetFilter.addEventListener("click", function(event) {
+
+        var allTasks = document.querySelectorAll(".collection-item");
+        allTasks.forEach(function (el) {
+            el.classList.remove("hidden");
+        })
+    })
+
+
+    //warunek walidacji
+    function validation(value) {
+        if (value.length > 5 && value.length < 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 });
