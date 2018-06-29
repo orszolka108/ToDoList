@@ -52,7 +52,7 @@ html {
     padding: 10px;
     width:60%;
     margin: 0 auto;
-   
+    border: 0.5px solid #636363;
 }
 
 .task-form,
@@ -156,7 +156,7 @@ label {
 
 .filter-button {
     background: none;
-    border: none;
+    border: 0.5px solid #9e9e9e;
     padding: 10px;
     font-size: 18px;
 }
