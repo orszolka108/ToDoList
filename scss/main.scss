@@ -127,7 +127,7 @@ label {
     color: #4eaaad;
 }
 
-.filter-icon {
+.filter-button {
     text-decoration: none;
 }
 
@@ -142,14 +142,16 @@ label {
     right: 105px;
     opacity:0;
     visibility: hidden;
-    transition: 0.5s opacity;
+
 
 }
 /*hover zrobiony podglądowo, myślę, że lepiej dodać event w JS na clicka :)*/
-.filter-box:hover .filter-list {
+.filter-list-active {
     opacity: 1;
     visibility: visible;
 }
+
+
 
 
 
@@ -179,6 +181,11 @@ label {
 .completed {
     background: grey;
 }
+
+.hidden {
+    display: none;
+}
+
 
 /*------------------------------*/
 /*---- taks deleting link ----*/
