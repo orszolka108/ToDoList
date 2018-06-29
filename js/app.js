@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var filterButton = document.querySelector(".filter-button");
     var filterList = document.querySelector(".filter-list");
 
-    filterButton.addEventListener("mouseover", function(event) {
+    filterButton.addEventListener("click", function(event) {
         filterList.classList.toggle("filter-list-active");
 
     })
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var rateThreeButton = document.querySelector("#rate-three");
     var rateFourButton = document.querySelector("#rate-four");
     var rateFiveButton = document.querySelector("#rate-five");
-
+    console.log(rateOneButton);
 
     var doneFilter = document.querySelector("#done-filter");
     var toDoFilter = document.querySelector("#todo-filter");
@@ -296,8 +296,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var rateThree = document.querySelectorAll(".prio-3");
         var rateFour = document.querySelectorAll(".prio-4");
         var rateFive = document.querySelectorAll(".prio-5");
-
-        console.log(rateTwo);
 
         rateTwo.forEach(function (el) {
             el.classList.add("hidden");
