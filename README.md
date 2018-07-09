@@ -3,6 +3,8 @@
 <h2>Description of the project:</h2>
 Simple todo list app built in HTML, Sass and JavaScript.
 Group project based on Agile methodology.
+<br>
+You can find it here: https://orszolka108.github.io/ToDoList_Ugroup/
 
 <h3>Technical part:</h3>
 <ul>
