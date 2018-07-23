@@ -5,7 +5,8 @@
 Simple todo list app built in HTML, Sass and JavaScript.
 Group project based on Agile methodology.
 <br>
-You can find it here: https://orszolka108.github.io/ToDoList_Ugroup/
+
+[[Preview Website]](https://orszolka108.github.io/ToDoList_Ugroup/)
 
 <h4>Screenshot:<h4/>
 
