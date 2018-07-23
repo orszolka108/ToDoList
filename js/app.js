@@ -288,13 +288,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var rateThreeButton = document.querySelector("#rate-three");
     var rateFourButton = document.querySelector("#rate-four");
     var rateFiveButton = document.querySelector("#rate-five");
-    console.log(rateOneButton);
 
     var doneFilter = document.querySelector("#done-filter");
     var toDoFilter = document.querySelector("#todo-filter");
     var resetFilter = document.querySelector("#reset-filter");
-
-
 
     rateOneButton.addEventListener("click", function(event) {
 
@@ -361,9 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
         rateFive.forEach(function (el) {
             el.classList.add("hidden");
         });
-
     })
-
 
     rateFourButton.addEventListener("click", function(event) {
 
@@ -372,7 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var rateThree = document.querySelectorAll(".prio-3");
 
         var rateFive = document.querySelectorAll(".prio-5");
-        console.log(rateTwo);
 
         rateTwo.forEach(function (el) {
             el.classList.add("hidden");
@@ -396,7 +390,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var rateThree = document.querySelectorAll(".prio-3");
 
         var rateFour = document.querySelectorAll(".prio-4");
-        console.log(rateTwo);
 
         rateTwo.forEach(function (el) {
             el.classList.add("hidden");
@@ -410,13 +403,10 @@ document.addEventListener("DOMContentLoaded", function () {
         rateFour.forEach(function (el) {
             el.classList.add("hidden");
         });
-
     })
-
 
     toDoFilter.addEventListener("click", function(event) {
         var doneTasks = document.querySelectorAll(".completed");
-
 
         doneTasks.forEach(function (el) {
             el.classList.add ("hidden");
