@@ -182,6 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             //Klasy poszczególnych elementów
             newLi.classList.add("collection-item");
+            newLi.classList.add("not-completed");
             if(key.isCompleted === true){
                 newLi.classList.add("completed");
             }
