@@ -52,7 +52,7 @@ html {
     padding: 10px;
     width:60%;
     margin: 0 auto;
-   
+    border: 0.5px solid #9e9e9e;
 }
 
 .task-form,
@@ -88,6 +88,8 @@ html {
 .task-features-display{
     display: inline;
 }
+
+
 
 #task, #description, #date, #filter, #priority{
     letter-spacing: 2px;
@@ -125,14 +127,16 @@ label {
 }
 
 .filter-button {
+    background: none;
+    border: 0.5px solid #8fcec4;
+    outline-color: #8fcec4;
     text-decoration: none;
-    padding: 5px;
-    border-radius: 2px;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 18px;
+    position: relative;
 }
 
-#filter {
-    width: 30%;
-}
 .filter-list {
     list-style: none;
     text-align: left;
@@ -140,8 +144,8 @@ label {
     border-radius: 5px;
     background-color: #8fcec4;
     padding: 5px;
-    top: -50px;
-    right: 100px;
+    top: 50px;
+    right: 130px;
     opacity:0;
     visibility: hidden;
     z-index: 1;
@@ -154,6 +158,14 @@ label {
 .filter-list-active {
     opacity: 1;
     visibility: visible;
+}
+
+.filterbutton {
+    background-color: #8fcec4;
+    border: none;
+    outline-color: #adfaee;
+    border: 1px solid #98dcd1;
+    padding: 5px;
 }
 
 /*------------------------------*/
@@ -222,8 +234,12 @@ label {
     }
 }
 
-@media only screen and (max-width: 770px) { 
+@media only screen and (max-width: 770px) {
     .task-form-border {
         width: 90%;
     }
- }
+    .filter-list {
+        top: 50px;
+        right: 30px;
+    }
+}
