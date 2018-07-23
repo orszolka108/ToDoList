@@ -7,7 +7,7 @@ Group project based on Agile methodology.
 <br>
 You can find it here: https://orszolka108.github.io/ToDoList_Ugroup/
 
-<h4>Screenshoot:<h4/>
+<h4>Screenshot:<h4/>
 
 
 ![Image](https://github.com/orszolka108/ToDoList_Ugroup/blob/master/img/screen.png)
