@@ -131,16 +131,11 @@ label {
     border: 0.5px solid #8fcec4;
     outline-color: #8fcec4;
     text-decoration: none;
-// <<<<<<< Ula
-//     padding: 5px;
-//     border-radius: 2px;
-// =======
-//     border-radius: 4px;
-//     padding: 10px;
-//     font-size: 18px;
-//     position: relative;
-// >>>>>>> master
-// }
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 18px;
+    position: relative;
+}
 
 .filter-list {
     list-style: none;
@@ -239,7 +234,7 @@ label {
     }
 }
 
-@media only screen and (max-width: 770px) { 
+@media only screen and (max-width: 770px) {
     .task-form-border {
         width: 90%;
     }
@@ -247,4 +242,4 @@ label {
         top: 50px;
         right: 30px;
     }
- }
+}
