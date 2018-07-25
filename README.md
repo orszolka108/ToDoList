@@ -4,7 +4,6 @@
 Clean, fast and easy to use to-do list app
 It was a group project based on Agile methodology.
 
-Stack:
 <ul># Stack
 
 * HTML5
