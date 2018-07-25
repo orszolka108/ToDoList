@@ -1,11 +1,17 @@
 
+<h1>To-do list</h1>
 
+Clean, fast and easy to use to-do list app
+It was a group project based on Agile methodology.
 
-<h2>Description of the project:</h2>
-Simple todo list app built in HTML, Sass and JavaScript.
-Group project based on Agile methodology.
+Stack:
+<ul>
+    <li>JavaScript/<li>
+    <li>Sass/<li>
+    <li>HTML5/<li>
+    <li>Gulp</li>
+
 <br>
-
 [[Preview Website]](https://orszolka108.github.io/ToDoList_Ugroup/)
 
 <h4>Screenshot:<h4/>
