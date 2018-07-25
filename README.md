@@ -4,15 +4,17 @@
 Clean, fast and easy to use to-do list app
 It was a group project based on Agile methodology.
 
-<ul># Stack
+<h3>Stack</h3>
+<ul> 
 
 * HTML5
 * CSS
 * JavaScript ES5
 * Gulp
 </ul>
-<br>
+</br>
 [[Preview Website]](https://orszolka108.github.io/ToDoList_Ugroup/)
+
 
 <h4>Screenshot:<h4/>
 
